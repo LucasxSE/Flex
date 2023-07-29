@@ -5,6 +5,12 @@ const app = express()
 //Traz o dotenv e configura ele
 require('dotenv').config()
 
+//Habilita requisições de corpo, presentes em formulários
+app.use(express.urlencoded({extended: true}))
+
+//Habilita requisições do tipo JSON
+app.use(express.json())
+
 //Para rotas do tipo barra (/), use o arquivo de rotas
 app.use('/', routes)
 
